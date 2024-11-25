@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .download-link {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .green { background-color: green; }
+        .yellow { background-color: yellow; color: black; }
+        .red { background-color: red; }
+    </style>
+</head>
+<body>
+    <h1>File Access Status</h1>
+
+    <!-- Countdown Timer -->
+    <p>Time remaining: <span id="countdown"></span></p>
+
+    <!-- Download Link -->
+    {% if link %}
+        <a id="download-link" href="{{ link }}" class="download-link {{ status }}">Download File</a>
+    {% else %}
+        <p class="download-link red">Access Expired</p>
+    {% endif %}
+
+    <!-- Load the countdown script -->
+    <script>
+        // Pass the deadline from the backend to JavaScript
+        const DEADLINE_TIMESTAMP = {{ deadline }};
+    </script>
+    <script src="/static/js/countdown.js"></script>
+</body>
+</html>
