@@ -10,7 +10,7 @@ import os
 load_dotenv()
 
 # Configuration
-DEADLINE = datetime(2024, 11, 25, 23, 59)
+DEADLINE = datetime(2024, 11, 20, 23, 59)
 
 FILE_ID = os.getenv("FILE_ID")
 
