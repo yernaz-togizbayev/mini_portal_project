@@ -22,7 +22,7 @@ function updateStatus() {
     const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
 
     document.getElementById("countdown").textContent =
-        `${days} дней ${hours} часов ${minutes} минут ${seconds} секунд`;
+        `${days}д ${hours}ч ${minutes}мин ${seconds}сек`;
 
     // Update the color based on remaining time
     if (days > 6) {
