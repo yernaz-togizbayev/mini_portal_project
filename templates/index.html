@@ -25,16 +25,16 @@
     </style>
 </head>
 <body>
-    <h1>File Access Status</h1>
+    <h1>Статус доступа к файлу</h1>
 
     <!-- Countdown Timer -->
-    <p>Time remaining: <span id="countdown"></span></p>
+    <p>Оставшееся время: <span id="countdown"></span></p>
 
     <!-- Download Link -->
     {% if link %}
-        <a id="download-link" href="{{ link }}" class="download-link {{ status }}">Download File</a>
+        <a id="download-link" href="{{ link }}" class="download-link {{ status }}">Скачать файл</a>
     {% else %}
-        <p class="download-link red">Access Expired</p>
+        <p class="download-link red">Доступ закрыт</p>
     {% endif %}
 
     <!-- Load the countdown script -->
