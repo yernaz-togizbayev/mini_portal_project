@@ -7,9 +7,9 @@ function updateStatus() {
     const downloadLink = document.getElementById("download-link");
 
     if (remaining <= 0) {
-        document.getElementById("countdown").textContent = "Expired";
+        document.getElementById("countdown").textContent = "Время вышло";
         if (downloadLink) {
-            downloadLink.textContent = "Access Expired";
+            downloadLink.textContent = "Доступ закрыт";
             downloadLink.className = "download-link red";
             downloadLink.removeAttribute("href"); // Disable the link
         }
