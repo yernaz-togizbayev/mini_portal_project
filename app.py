@@ -21,9 +21,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    # client_ip = request.remote_addr
-    # if not is_ip_allowed(client_ip):
-        # return "Access Denied", 403
+    client_ip = request.remote_addr
+    if not is_ip_allowed(client_ip):
+        return "Access Denied", 403
 
     status = get_status(DEADLINE)
     remaining_time = time_left(DEADLINE)
@@ -40,9 +40,9 @@ def index():
 
 @app.route("/download")
 def download():
-    # client_ip = request.remote_addr
-    # if not is_ip_allowed(client_ip):
-        # return "Access Denied", 403
+    client_ip = request.remote_addr
+    if not is_ip_allowed(client_ip):
+        return "Access Denied", 403
 
     if get_status(DEADLINE) == "red":
         return "Access expired", 403
